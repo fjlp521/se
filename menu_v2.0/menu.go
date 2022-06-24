@@ -6,6 +6,7 @@ import (
 )
 
 var head *DataNode
+//some cmds
 var cmds []*DataNode = []*DataNode{
 	{"help", "this is help cmd!", Help, nil},
 	{"version", "menu program v2.0", ShowVersion, nil},
@@ -13,6 +14,7 @@ var cmds []*DataNode = []*DataNode{
 }
 
 func main() {
+	//将cmds插入到链表中
 	head = &DataNode{}
 	tail := head
 	for _, cmd := range cmds {
@@ -21,6 +23,7 @@ func main() {
 	}
 	tail.next = nil
 	head = head.next
+	
 	var cmd string
 	for {
 		fmt.Print("Input a cmd > ")
